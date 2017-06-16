@@ -26,9 +26,7 @@ import me.biezhi.wechat.util.Matchers;
  * Hello world!
  */
 public class WechatRobot {
-
 	private static final Logger LOGGER = LoggerFactory.getLogger(WechatRobot.class);
-
 	private int tip = 0;
 	private WechatListener wechatListener = new WechatListener();
 	private WechatService wechatService = new WechatServiceImpl();
