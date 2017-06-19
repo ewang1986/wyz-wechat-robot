@@ -26,7 +26,6 @@ import me.biezhi.wechat.util.Matchers;
 public class WechatServiceImpl implements WechatService {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(WechatService.class);
-	
 	// 茉莉机器人
 	private Robot robot = new MoLiRobot();
 	
@@ -307,7 +306,6 @@ public class WechatServiceImpl implements WechatService {
 	 * 检测心跳
 	 */
 	private int[] syncCheck(String url, WechatMeta meta){
-
 		// 如果网络中断，休息10秒
 		if(PingUtil.netIsOver()){
 			try {
@@ -448,9 +446,7 @@ public class WechatServiceImpl implements WechatService {
 	
 	@Override
 	public JSONObject webwxsync(WechatMeta meta){
-		
 		String url = meta.getBase_uri() + "/webwxsync?skey=" + meta.getSkey() + "&sid=" + meta.getWxsid();
-		
 		JSONObject body = new JSONObject();
 		body.put("BaseRequest", meta.getBaseRequest());
 		body.put("SyncKey", meta.getSyncKey());
