@@ -167,12 +167,9 @@ public class WechatServiceImpl implements WechatService {
 	public String getUUID() {
 		HttpRequest request = HttpRequest.get(Constant.JS_LOGIN_URL, true, "appid", "wx782c26e4c19acffb", "fun", "new",
 				"lang", "zh_CN", "_", DateKit.getCurrentUnixTime());
-		
 		LOGGER.debug(request.toString());
-		
 		String res = request.body();
 		request.disconnect();
-
 		if (StringKit.isNotBlank(res)) {
 			String code = Matchers.match("window.QRLogin.code = (\\d+);", res);
 			if (null != code) {
