@@ -24,7 +24,6 @@ import me.biezhi.wechat.robot.Robot;
 import me.biezhi.wechat.util.Matchers;
 
 public class WechatServiceImpl implements WechatService {
-
 	private static final Logger LOGGER = LoggerFactory.getLogger(WechatService.class);
 	// 茉莉机器人
 	private Robot robot = new MoLiRobot();
