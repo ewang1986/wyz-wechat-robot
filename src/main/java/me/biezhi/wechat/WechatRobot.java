@@ -78,7 +78,6 @@ public class WechatRobot {
 
 		LOGGER.info("等待登录...");
 		LOGGER.debug("" + request.toString());
-
 		String res = request.body();
 		request.disconnect();
 
@@ -97,10 +96,8 @@ public class WechatRobot {
 				String pm = Matchers.match("window.redirect_uri=\"(\\S+?)\";", res);
 				String redirect_uri = pm + "&fun=new";
 				wechatMeta.setRedirect_uri(redirect_uri);
-				
 				String base_uri = redirect_uri.substring(0, redirect_uri.lastIndexOf("/"));
 				wechatMeta.setBase_uri(base_uri);
-				
 				LOGGER.debug("redirect_uri={}", redirect_uri);
 				LOGGER.debug("base_uri={}", base_uri);
 			} else if (code.equals("408")) {
