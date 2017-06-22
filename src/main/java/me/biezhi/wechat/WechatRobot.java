@@ -150,18 +150,14 @@ public class WechatRobot {
 	}
 	
 	public void start() throws WechatException {
-
 		this.login();
 		LOGGER.info("微信登录成功");
-		
 		LOGGER.info("微信初始化...");
 		wechatService.wxInit(wechatMeta);
 		LOGGER.info("微信初始化成功");
-		
 		LOGGER.info("开启状态通知...");
 		wechatService.openStatusNotify(wechatMeta);
 		LOGGER.info("开启状态通知成功");
-		
 		LOGGER.info("获取联系人...");
 		Constant.CONTACT = wechatService.getContact(wechatMeta);
 		LOGGER.info("获取联系人成功");
