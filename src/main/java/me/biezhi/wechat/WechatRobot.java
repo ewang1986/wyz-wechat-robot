@@ -127,6 +127,7 @@ public class WechatRobot {
 		if (StringKit.isBlank(res)) {
 			throw new WechatException("登录失败");
 		}
+
 		wechatMeta.setSkey(Matchers.match("<skey>(\\S+)</skey>", res));
 		wechatMeta.setWxsid(Matchers.match("<wxsid>(\\S+)</wxsid>", res));
 		wechatMeta.setWxuin(Matchers.match("<wxuin>(\\S+)</wxuin>", res));
