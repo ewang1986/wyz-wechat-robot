@@ -375,6 +375,7 @@ public class WechatServiceImpl implements WechatService {
 					LOGGER.info("|" + name + "| " + peopleContent[0] + ":\n" + peopleContent[1].replace("<br/>", "\n"));
 				} else {
 					LOGGER.info(name + ": " + content);
+					//TODO 自动回复消息
 					String ans = robot.talk(content);
 					webwxsendmsg(wechatMeta, ans, msg.getString("FromUserName"));
 					LOGGER.info("自动回复 " + ans);

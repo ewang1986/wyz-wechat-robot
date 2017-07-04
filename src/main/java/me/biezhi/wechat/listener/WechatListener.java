@@ -47,6 +47,7 @@ public class WechatListener {
 					} else {
 						// 
 					}
+
 					try {
 						LOGGER.info("等待2000ms...");
 						Thread.sleep(2000);
