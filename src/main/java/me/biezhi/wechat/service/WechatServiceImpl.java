@@ -327,7 +327,6 @@ public class WechatServiceImpl implements WechatService {
 				.header("Cookie", meta.getCookie());
 
 		LOGGER.debug(request.toString());
-		
 		String res = request.body();
 		request.disconnect();
 
@@ -376,7 +375,8 @@ public class WechatServiceImpl implements WechatService {
 				} else {
 					LOGGER.info(name + ": " + content);
 					//TODO 自动回复消息
-					String ans = robot.talk(content);
+					//String ans = robot.talk(content);
+					String ans = "你好";
 					webwxsendmsg(wechatMeta, ans, msg.getString("FromUserName"));
 					LOGGER.info("自动回复 " + ans);
 				}
@@ -399,7 +399,7 @@ public class WechatServiceImpl implements WechatService {
 	/**
 	 * 发送消息
 	 */
-	private void webwxsendmsg(WechatMeta meta, String content, String to) {
+	public static void webwxsendmsg(WechatMeta meta, String content, String to) {
 		String url = meta.getBase_uri() + "/webwxsendmsg?lang=zh_CN&pass_ticket=" + meta.getPass_ticket();
 		JSONObject body = new JSONObject();
 
@@ -420,7 +420,9 @@ public class WechatServiceImpl implements WechatService {
 
 		LOGGER.info("发送消息...");
 		LOGGER.debug("" + request);
-		request.body();
+		String responseBody = request.body();
+		LOGGER.info("发送消息的响应body...");
+		LOGGER.debug("" + responseBody);
 		request.disconnect();
 	}
 	
