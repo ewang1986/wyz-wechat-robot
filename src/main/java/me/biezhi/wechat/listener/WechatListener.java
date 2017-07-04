@@ -50,7 +50,8 @@ public class WechatListener {
 							//0 正常
 							//TODO 在此群发消息
 							JSONArray ja = Constant.CONTACT.getContactList();
-
+							LOGGER.debug("联系人信息：");
+							LOGGER.debug(""+ja);
 							//蒸发身体的温度 UserName
 							String to = "@4ba313f5b1af5719003b8e39c110aa7738a8f75d7bd4d3d467d122fca48e053e";
 							WechatServiceImpl.webwxsendmsg(wechatMeta,content,to);
