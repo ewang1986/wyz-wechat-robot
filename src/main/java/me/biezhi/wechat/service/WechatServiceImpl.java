@@ -228,8 +228,8 @@ public class WechatServiceImpl implements WechatService {
 	 */
 	@Override
 	public void wxInit(WechatMeta wechatMeta) {
-		String url = wechatMeta.getBase_uri() + "/webwxinit?r=" + DateKit.getCurrentUnixTime() + "&pass_ticket="
-				+ wechatMeta.getPass_ticket() + "&skey=" + wechatMeta.getSkey();
+		String url = wechatMeta.getBase_uri() + "/webwxinit?r=" + DateKit.getCurrentUnixTime()
+				+ "&pass_ticket=" + wechatMeta.getPass_ticket() + "&skey=" + wechatMeta.getSkey();
 
 		JSONObject body = new JSONObject();
 		body.put("BaseRequest", wechatMeta.getBaseRequest());
