@@ -354,7 +354,6 @@ public class WechatServiceImpl implements WechatService {
 		if (null == data) {
 			return;
 		}
-
 		JSONArray AddMsgList = data.get("AddMsgList").asArray();
 		
 		for (int i = 0, len = AddMsgList.size(); i < len; i++) {
